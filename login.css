@@ -1,0 +1,205 @@
+<style>
+    /* ----- RESET & FRESH GREEN BACKGROUND ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+       body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Background updated to farmer.webp with cover setting */
+      background:  url('farmer.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 1rem;
+    }
+
+    /* ----- MAIN CARD : WHITE SMOKE / SOFT WHITE ----- */
+    .login-card {
+      background: rgba(250, 250, 250, 0.95);
+      width: 400px;
+      max-width: 100%;
+      padding: 2.5rem 2rem 2rem 2rem;
+      border-radius: 36px 36px 32px 32px;
+      box-shadow: 0 25px 40px -12px rgba(0, 40, 0, 0.6),
+                  0 8px 18px rgba(0, 30, 0, 0.3),
+                  inset 0 1px 4px rgba(255, 255, 255, 0.8);
+      transition: transform 0.2s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .login-card:hover {
+      transform: scale(1.01);
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-header h2 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      color: #1b4d1f;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .login-header h2 span {
+      font-size: 2.5rem;
+      filter: drop-shadow(2px 4px 6px rgba(30, 90, 30, 0.4));
+    }
+
+    .login-header p {
+      color: #2e6031;
+      font-weight: 400;
+      font-size: 0.95rem;
+      background: #e9f3e9;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      margin-top: 0.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #1f4a2a;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+
+    label i {
+      margin-right: 8px;
+      opacity: 0.8;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px 16px;
+      background: #ffffff;
+      border: 2px solid transparent;
+      border-radius: 24px;
+      font-size: 1rem;
+      color: #1f3b22;
+      outline: none;
+      box-shadow: 0 5px 10px rgba(0, 30, 0, 0.04), 0 2px 4px rgba(0, 20, 0, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: #3c8d40;
+      box-shadow: 0 8px 18px -8px #2e7d32, 0 0 0 4px rgba(76, 175, 80, 0.15);
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      pointer-events: none;
+    }
+
+    .error-message {
+      background: #ffebee;
+      color: #c62828;
+      padding: 12px;
+      border-radius: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-left: 4px solid #c62828;
+    }
+
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(115deg, #1e5f28, #2e7d32);
+      border: none;
+      padding: 16px 20px;
+      border-radius: 40px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.25rem;
+      cursor: pointer;
+      box-shadow: 0 15px 25px -7px #1b5e20, 0 4px 8px rgba(0, 40, 0, 0.3);
+      transition: all 0.2s;
+      margin: 1.2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .login-btn:hover {
+      background: linear-gradient(115deg, #256f2a, #3f9445);
+      box-shadow: 0 20px 30px -8px #1b5e20;
+      transform: translateY(-2px);
+    }
+
+    .login-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 5px 12px #1b4d1f;
+    }
+
+    .extra-links {
+      display: flex;
+      justify-content: center;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .extra-links a {
+      color: #256528;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border-bottom: 1.5px dashed #9fcba1;
+      transition: 0.2s;
+    }
+
+    .extra-links a:hover {
+      color: #0f4712;
+      border-bottom: 1.5px solid #1e5f28;
+    }
+
+    .demo-credentials {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e8f5e9;
+      border-radius: 24px;
+      font-size: 0.85rem;
+      color: #1b5e20;
+      text-align: center;
+    }
+
+    .demo-credentials p {
+      margin: 5px 0;
+    }
+
+    .demo-credentials strong {
+      color: #0a3d0a;
+    }
+
+    @media (max-width: 480px) {
+      .login-card { padding: 2rem 1.2rem; }
+      .login-header h2 { font-size: 1.8rem; }
+    }
+  </style>
